@@ -49,16 +49,17 @@ desired effect
 |               | sidebar-mini                            |
 |---------------------------------------------------------|
 -->
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-red sidebar-mini">
     <div class="wrapper">
         <!-- Main Header -->
         <header class="main-header">
             <!-- Logo -->
+
             <a href="index2.html" class="logo">
                 <!-- mini logo for sidebar mini 50x50 pixels -->
-                <span class="logo-mini"><b>A</b>LT</span>
+                <span class="logo-mini"><b>V</b>A</span>
                 <!-- logo for regular state and mobile devices -->
-                <span class="logo-lg"><b>Admin</b>LTE</span>
+                <span class="logo-lg">Virtual <b>Assistant</b></span>
             </a>
             <!-- Header Navbar -->
             <nav class="navbar navbar-static-top" role="navigation">
@@ -69,6 +70,9 @@ desired effect
                 <!-- Navbar Right Menu -->
                 <div class="navbar-custom-menu">
                     <ul class="nav navbar-nav">
+                        <li>
+                            @Html.Partial("_LoginPartial")
+                        </li>
                         <!-- Messages: style can be found in dropdown.less-->
                         <li class="dropdown messages-menu">
                             <!-- Menu toggle button -->
@@ -134,7 +138,7 @@ desired effect
                             <!-- Menu Toggle Button -->
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="fa fa-flag-o"></i>
-                                <span class="label label-danger">9</span>
+                                <span class="label label-primary">9</span>
                             </a>
                             <ul class="dropdown-menu">
                                 <li class="header">You have 9 tasks</li>
@@ -267,6 +271,7 @@ desired effect
                         </ul>
                     </li>
                 </ul>
+
                 <!-- /.sidebar-menu -->
             </section>
             <!-- /.sidebar -->
@@ -372,8 +377,7 @@ desired effect
     </div>
     <!-- ./wrapper -->
     <!-- REQUIRED JS SCRIPTS -->
-@Scripts.Render("~/bundles/jquery")
-@Scripts.Render("~/bundles/bootstrap")
+@Scripts.Render("~/bundles/lib")
 @Scripts.Render("~/admin-lte/js")
 @RenderSection("scripts", required: false)
 <script src="@Url.Content("~/Scripts/Contact.js")"></script>
