@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -60,9 +61,8 @@
       <HintPath>..\packages\Glimpse.Ado.1.7.3\lib\net45\Glimpse.Ado.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Glimpse.AspNet, Version=1.8.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Glimpse.AspNet.1.8.0\lib\net45\Glimpse.AspNet.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Glimpse.AspNet, Version=1.9.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Glimpse.AspNet.1.9.2\lib\net45\Glimpse.AspNet.dll</HintPath>
     </Reference>
     <Reference Include="Glimpse.Core, Version=1.8.6.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Glimpse.1.8.6\lib\net45\Glimpse.Core.dll</HintPath>
@@ -236,17 +236,90 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="GlimpseSecurityPolicy.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711080457168_InitialCreate.cs" />
+    <Compile Include="Migrations\201711080457168_InitialCreate.Designer.cs">
+      <DependentUpon>201711080457168_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711150921294_InitialModel.cs" />
+    <Compile Include="Migrations\201711150921294_InitialModel.Designer.cs">
+      <DependentUpon>201711150921294_InitialModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711160702510_AddIsSubscribedToNewsletter.cs" />
+    <Compile Include="Migrations\201711160702510_AddIsSubscribedToNewsletter.Designer.cs">
+      <DependentUpon>201711160702510_AddIsSubscribedToNewsletter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711160709492_AddMembershipType.cs" />
+    <Compile Include="Migrations\201711160709492_AddMembershipType.Designer.cs">
+      <DependentUpon>201711160709492_AddMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711160713167_PopulateMembershipType.cs" />
+    <Compile Include="Migrations\201711160713167_PopulateMembershipType.Designer.cs">
+      <DependentUpon>201711160713167_PopulateMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711160742477_ApplyAnnotationsToCustomerName.cs" />
+    <Compile Include="Migrations\201711160742477_ApplyAnnotationsToCustomerName.Designer.cs">
+      <DependentUpon>201711160742477_ApplyAnnotationsToCustomerName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711160824118_AddNameOnMembershipType.cs" />
+    <Compile Include="Migrations\201711160824118_AddNameOnMembershipType.Designer.cs">
+      <DependentUpon>201711160824118_AddNameOnMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711160825225_AddDataNameOnMembershipType.cs" />
+    <Compile Include="Migrations\201711160825225_AddDataNameOnMembershipType.Designer.cs">
+      <DependentUpon>201711160825225_AddDataNameOnMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711160837105_AddBirthdayOnCustomer.cs" />
+    <Compile Include="Migrations\201711160837105_AddBirthdayOnCustomer.Designer.cs">
+      <DependentUpon>201711160837105_AddBirthdayOnCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711160839081_ApplyAnnotationsToCustomerBirthDate.cs" />
+    <Compile Include="Migrations\201711160839081_ApplyAnnotationsToCustomerBirthDate.Designer.cs">
+      <DependentUpon>201711160839081_ApplyAnnotationsToCustomerBirthDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711160852018_ApplyAnnotationsNameToMembershipType.cs" />
+    <Compile Include="Migrations\201711160852018_ApplyAnnotationsNameToMembershipType.Designer.cs">
+      <DependentUpon>201711160852018_ApplyAnnotationsNameToMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711160932449_exercise3.cs" />
+    <Compile Include="Migrations\201711160932449_exercise3.Designer.cs">
+      <DependentUpon>201711160932449_exercise3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711160938469_exercise31.cs" />
+    <Compile Include="Migrations\201711160938469_exercise31.Designer.cs">
+      <DependentUpon>201711160938469_exercise31.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711160940113_exercise32.cs" />
+    <Compile Include="Migrations\201711160940113_exercise32.Designer.cs">
+      <DependentUpon>201711160940113_exercise32.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711161006224_exercise33.cs" />
+    <Compile Include="Migrations\201711161006224_exercise33.Designer.cs">
+      <DependentUpon>201711161006224_exercise33.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711161008502_exercise34.cs" />
+    <Compile Include="Migrations\201711161008502_exercise34.Designer.cs">
+      <DependentUpon>201711161008502_exercise34.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MembershipType.cs" />
+    <Compile Include="Models\Movie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\NewCustomerViewModel.cs" />
+    <Compile Include="ViewModels\RandomMovieViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="admin-lte\css\AdminLTE.css" />
@@ -466,12 +539,16 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\DataTables\css\autoFill.bootstrap.css" />
     <Content Include="Content\DataTables\css\autoFill.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\autoFill.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\autoFill.bootstrap4.min.css" />
     <Content Include="Content\DataTables\css\autoFill.dataTables.css" />
     <Content Include="Content\DataTables\css\autoFill.dataTables.min.css" />
     <Content Include="Content\DataTables\css\autoFill.foundation.css" />
     <Content Include="Content\DataTables\css\autoFill.foundation.min.css" />
     <Content Include="Content\DataTables\css\autoFill.jqueryui.css" />
     <Content Include="Content\DataTables\css\autoFill.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\autoFill.semanticui.css" />
+    <Content Include="Content\DataTables\css\autoFill.semanticui.min.css" />
     <Content Include="Content\DataTables\css\buttons.bootstrap.css" />
     <Content Include="Content\DataTables\css\buttons.bootstrap.min.css" />
     <Content Include="Content\DataTables\css\buttons.bootstrap4.css" />
@@ -482,14 +559,20 @@
     <Content Include="Content\DataTables\css\buttons.foundation.min.css" />
     <Content Include="Content\DataTables\css\buttons.jqueryui.css" />
     <Content Include="Content\DataTables\css\buttons.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\buttons.semanticui.css" />
+    <Content Include="Content\DataTables\css\buttons.semanticui.min.css" />
     <Content Include="Content\DataTables\css\colReorder.bootstrap.css" />
     <Content Include="Content\DataTables\css\colReorder.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\colReorder.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\colReorder.bootstrap4.min.css" />
     <Content Include="Content\DataTables\css\colReorder.dataTables.css" />
     <Content Include="Content\DataTables\css\colReorder.dataTables.min.css" />
     <Content Include="Content\DataTables\css\colReorder.foundation.css" />
     <Content Include="Content\DataTables\css\colReorder.foundation.min.css" />
     <Content Include="Content\DataTables\css\colReorder.jqueryui.css" />
     <Content Include="Content\DataTables\css\colReorder.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\colReorder.semanticui.css" />
+    <Content Include="Content\DataTables\css\colReorder.semanticui.min.css" />
     <Content Include="Content\DataTables\css\dataTables.bootstrap.css" />
     <Content Include="Content\DataTables\css\dataTables.bootstrap.min.css" />
     <Content Include="Content\DataTables\css\dataTables.bootstrap4.css" />
@@ -506,63 +589,103 @@
     <Content Include="Content\DataTables\css\dataTables.uikit.min.css" />
     <Content Include="Content\DataTables\css\fixedColumns.bootstrap.css" />
     <Content Include="Content\DataTables\css\fixedColumns.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.bootstrap4.min.css" />
     <Content Include="Content\DataTables\css\fixedColumns.dataTables.css" />
     <Content Include="Content\DataTables\css\fixedColumns.dataTables.min.css" />
     <Content Include="Content\DataTables\css\fixedColumns.foundation.css" />
     <Content Include="Content\DataTables\css\fixedColumns.foundation.min.css" />
     <Content Include="Content\DataTables\css\fixedColumns.jqueryui.css" />
     <Content Include="Content\DataTables\css\fixedColumns.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.semanticui.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.semanticui.min.css" />
     <Content Include="Content\DataTables\css\fixedHeader.bootstrap.css" />
     <Content Include="Content\DataTables\css\fixedHeader.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.bootstrap4.min.css" />
     <Content Include="Content\DataTables\css\fixedHeader.dataTables.css" />
     <Content Include="Content\DataTables\css\fixedHeader.dataTables.min.css" />
     <Content Include="Content\DataTables\css\fixedHeader.foundation.css" />
     <Content Include="Content\DataTables\css\fixedHeader.foundation.min.css" />
     <Content Include="Content\DataTables\css\fixedHeader.jqueryui.css" />
     <Content Include="Content\DataTables\css\fixedHeader.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.semanticui.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.semanticui.min.css" />
     <Content Include="Content\DataTables\css\jquery.dataTables.css" />
     <Content Include="Content\DataTables\css\jquery.dataTables.min.css" />
     <Content Include="Content\DataTables\css\jquery.dataTables_themeroller.css" />
     <Content Include="Content\DataTables\css\keyTable.bootstrap.css" />
     <Content Include="Content\DataTables\css\keyTable.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\keyTable.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\keyTable.bootstrap4.min.css" />
     <Content Include="Content\DataTables\css\keyTable.dataTables.css" />
     <Content Include="Content\DataTables\css\keyTable.dataTables.min.css" />
     <Content Include="Content\DataTables\css\keyTable.foundation.css" />
     <Content Include="Content\DataTables\css\keyTable.foundation.min.css" />
     <Content Include="Content\DataTables\css\keyTable.jqueryui.css" />
     <Content Include="Content\DataTables\css\keyTable.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\keyTable.semanticui.css" />
+    <Content Include="Content\DataTables\css\keyTable.semanticui.min.css" />
     <Content Include="Content\DataTables\css\responsive.bootstrap.css" />
     <Content Include="Content\DataTables\css\responsive.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\responsive.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\responsive.bootstrap4.min.css" />
     <Content Include="Content\DataTables\css\responsive.dataTables.css" />
     <Content Include="Content\DataTables\css\responsive.dataTables.min.css" />
     <Content Include="Content\DataTables\css\responsive.foundation.css" />
     <Content Include="Content\DataTables\css\responsive.foundation.min.css" />
     <Content Include="Content\DataTables\css\responsive.jqueryui.css" />
     <Content Include="Content\DataTables\css\responsive.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\responsive.semanticui.css" />
+    <Content Include="Content\DataTables\css\responsive.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\rowGroup.bootstrap.css" />
+    <Content Include="Content\DataTables\css\rowGroup.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\rowGroup.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\rowGroup.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\rowGroup.dataTables.css" />
+    <Content Include="Content\DataTables\css\rowGroup.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\rowGroup.foundation.css" />
+    <Content Include="Content\DataTables\css\rowGroup.foundation.min.css" />
+    <Content Include="Content\DataTables\css\rowGroup.jqueryui.css" />
+    <Content Include="Content\DataTables\css\rowGroup.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\rowGroup.semanticui.css" />
+    <Content Include="Content\DataTables\css\rowGroup.semanticui.min.css" />
     <Content Include="Content\DataTables\css\rowReorder.bootstrap.css" />
     <Content Include="Content\DataTables\css\rowReorder.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\rowReorder.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\rowReorder.bootstrap4.min.css" />
     <Content Include="Content\DataTables\css\rowReorder.dataTables.css" />
     <Content Include="Content\DataTables\css\rowReorder.dataTables.min.css" />
     <Content Include="Content\DataTables\css\rowReorder.foundation.css" />
     <Content Include="Content\DataTables\css\rowReorder.foundation.min.css" />
     <Content Include="Content\DataTables\css\rowReorder.jqueryui.css" />
     <Content Include="Content\DataTables\css\rowReorder.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\rowReorder.semanticui.css" />
+    <Content Include="Content\DataTables\css\rowReorder.semanticui.min.css" />
     <Content Include="Content\DataTables\css\scroller.bootstrap.css" />
     <Content Include="Content\DataTables\css\scroller.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\scroller.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\scroller.bootstrap4.min.css" />
     <Content Include="Content\DataTables\css\scroller.dataTables.css" />
     <Content Include="Content\DataTables\css\scroller.dataTables.min.css" />
     <Content Include="Content\DataTables\css\scroller.foundation.css" />
     <Content Include="Content\DataTables\css\scroller.foundation.min.css" />
     <Content Include="Content\DataTables\css\scroller.jqueryui.css" />
     <Content Include="Content\DataTables\css\scroller.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\scroller.semanticui.css" />
+    <Content Include="Content\DataTables\css\scroller.semanticui.min.css" />
     <Content Include="Content\DataTables\css\select.bootstrap.css" />
     <Content Include="Content\DataTables\css\select.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\select.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\select.bootstrap4.min.css" />
     <Content Include="Content\DataTables\css\select.dataTables.css" />
     <Content Include="Content\DataTables\css\select.dataTables.min.css" />
     <Content Include="Content\DataTables\css\select.foundation.css" />
     <Content Include="Content\DataTables\css\select.foundation.min.css" />
     <Content Include="Content\DataTables\css\select.jqueryui.css" />
     <Content Include="Content\DataTables\css\select.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\select.semanticui.css" />
+    <Content Include="Content\DataTables\css\select.semanticui.min.css" />
     <Content Include="Content\DataTables\images\details_close.png" />
     <Content Include="Content\DataTables\images\details_open.png" />
     <Content Include="Content\DataTables\images\sort_asc.png" />
@@ -588,6 +711,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Img\IMG-20161007-WA0014.jpg" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -610,10 +734,11 @@
     <Content Include="admin-lte\css\adminlte.css.map" />
     <Content Include="admin-lte\plugins\input-mask\phone-codes\phone-be.json" />
     <Content Include="admin-lte\plugins\input-mask\phone-codes\phone-codes.json" />
-    <Content Include="Content\DataTables\css\mixins.scss" />
-    <Content Include="Content\DataTables\css\common.scss" />
     <Content Include="Content\toastr.scss" />
     <Content Include="Content\toastr.less" />
+    <Content Include="Content\DataTables\css\semanticui.scss" />
+    <Content Include="Content\DataTables\css\mixins.scss" />
+    <Content Include="Content\DataTables\css\common.scss" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\bloodhound.js" />
     <Content Include="Scripts\bloodhound.min.js" />
@@ -623,10 +748,14 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\autoFill.bootstrap4.js" />
+    <Content Include="Scripts\DataTables\autoFill.bootstrap4.min.js" />
     <Content Include="Scripts\DataTables\autoFill.foundation.js" />
     <Content Include="Scripts\DataTables\autoFill.foundation.min.js" />
     <Content Include="Scripts\DataTables\autoFill.jqueryui.js" />
     <Content Include="Scripts\DataTables\autoFill.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables\autoFill.semanticui.js" />
+    <Content Include="Scripts\DataTables\autoFill.semanticui.min.js" />
     <Content Include="Scripts\DataTables\buttons.bootstrap.js" />
     <Content Include="Scripts\DataTables\buttons.bootstrap.min.js" />
     <Content Include="Scripts\DataTables\buttons.bootstrap4.js" />
@@ -643,6 +772,8 @@
     <Content Include="Scripts\DataTables\buttons.jqueryui.min.js" />
     <Content Include="Scripts\DataTables\buttons.print.js" />
     <Content Include="Scripts\DataTables\buttons.print.min.js" />
+    <Content Include="Scripts\DataTables\buttons.semanticui.js" />
+    <Content Include="Scripts\DataTables\buttons.semanticui.min.js" />
     <Content Include="Scripts\DataTables\dataTables.autoFill.js" />
     <Content Include="Scripts\DataTables\dataTables.autoFill.min.js" />
     <Content Include="Scripts\DataTables\dataTables.bootstrap.js" />
@@ -667,6 +798,8 @@
     <Content Include="Scripts\DataTables\dataTables.material.min.js" />
     <Content Include="Scripts\DataTables\dataTables.responsive.js" />
     <Content Include="Scripts\DataTables\dataTables.responsive.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.rowGroup.js" />
+    <Content Include="Scripts\DataTables\dataTables.rowGroup.min.js" />
     <Content Include="Scripts\DataTables\dataTables.rowReorder.js" />
     <Content Include="Scripts\DataTables\dataTables.rowReorder.min.js" />
     <Content Include="Scripts\DataTables\dataTables.scroller.js" />
@@ -681,10 +814,14 @@
     <Content Include="Scripts\DataTables\jquery.dataTables.min.js" />
     <Content Include="Scripts\DataTables\responsive.bootstrap.js" />
     <Content Include="Scripts\DataTables\responsive.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\responsive.bootstrap4.js" />
+    <Content Include="Scripts\DataTables\responsive.bootstrap4.min.js" />
     <Content Include="Scripts\DataTables\responsive.foundation.js" />
     <Content Include="Scripts\DataTables\responsive.foundation.min.js" />
     <Content Include="Scripts\DataTables\responsive.jqueryui.js" />
     <Content Include="Scripts\DataTables\responsive.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables\responsive.semanticui.js" />
+    <Content Include="Scripts\DataTables\responsive.semanticui.min.js" />
     <Content Include="Scripts\jquery-3.2.1.js" />
     <Content Include="Scripts\jquery-3.2.1.min.js" />
     <Content Include="Scripts\jquery-3.2.1.slim.js" />
@@ -709,6 +846,7 @@
     <Content Include="Scripts\typeahead.jquery.js" />
     <Content Include="Scripts\typeahead.jquery.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -742,7 +880,13 @@
     <Content Include="Views\Manage\SetPassword.cshtml" />
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
-    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Movies\Random.cshtml" />
+    <Content Include="Views\Shared\_NavBar.cshtml" />
+    <Content Include="Views\Movies\Index.cshtml" />
+    <Content Include="Views\Customers\Details.cshtml" />
+    <Content Include="Views\Customers\Index.cshtml" />
+    <Content Include="Views\Movies\Details.cshtml" />
+    <Content Include="Views\Customers\New.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -752,6 +896,56 @@
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-3.2.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.2.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201711080457168_InitialCreate.resx">
+      <DependentUpon>201711080457168_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711150921294_InitialModel.resx">
+      <DependentUpon>201711150921294_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711160702510_AddIsSubscribedToNewsletter.resx">
+      <DependentUpon>201711160702510_AddIsSubscribedToNewsletter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711160709492_AddMembershipType.resx">
+      <DependentUpon>201711160709492_AddMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711160713167_PopulateMembershipType.resx">
+      <DependentUpon>201711160713167_PopulateMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711160742477_ApplyAnnotationsToCustomerName.resx">
+      <DependentUpon>201711160742477_ApplyAnnotationsToCustomerName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711160824118_AddNameOnMembershipType.resx">
+      <DependentUpon>201711160824118_AddNameOnMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711160825225_AddDataNameOnMembershipType.resx">
+      <DependentUpon>201711160825225_AddDataNameOnMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711160837105_AddBirthdayOnCustomer.resx">
+      <DependentUpon>201711160837105_AddBirthdayOnCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711160839081_ApplyAnnotationsToCustomerBirthDate.resx">
+      <DependentUpon>201711160839081_ApplyAnnotationsToCustomerBirthDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711160852018_ApplyAnnotationsNameToMembershipType.resx">
+      <DependentUpon>201711160852018_ApplyAnnotationsNameToMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711160932449_exercise3.resx">
+      <DependentUpon>201711160932449_exercise3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711160938469_exercise31.resx">
+      <DependentUpon>201711160938469_exercise31.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711160940113_exercise32.resx">
+      <DependentUpon>201711160940113_exercise32.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711161006224_exercise33.resx">
+      <DependentUpon>201711161006224_exercise33.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711161008502_exercise34.resx">
+      <DependentUpon>201711161008502_exercise34.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

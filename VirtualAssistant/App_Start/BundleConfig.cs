@@ -36,7 +36,7 @@ namespace VirtualAssistant
                       "~/Content/site.css",
                       "~/Content/datatables/css/datatables.bootsrap.css",
                       "~/admin-lte/css/AdminLTE.css",
-                      "~/admin-lte/css/skins/skin-red.css",
+                      "~/admin-lte/css/skins/skin-yellow.css",
                       "~/admin-lte/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css"));
         }
     }

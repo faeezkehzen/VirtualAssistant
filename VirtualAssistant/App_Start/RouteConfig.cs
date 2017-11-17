@@ -12,6 +12,15 @@ namespace VirtualAssistant
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            //use this custom route
+            routes.MapMvcAttributeRoutes();
+
+            //custom route-->not very proper to use like this if the system grows
+            //routes.MapRoute(
+            //    "MoviesByReleaseDate",
+            //    "movies/released/{year}/{month}",
+            //    new { controller = "Movies", action = "ByreleasedDate" },
+            //    new { year = @"\d{4}",month = @"\d{2}"});
 
             routes.MapRoute(
                 name: "Default",
